@@ -1,9 +1,15 @@
 name: creating 2nd pipeline
-on: push 
+on: 
+  push:
+  pull_request:
+  schedule:
+     - cron: '*/5 * * * *' 
+  workflow_dispatch:
 
 jobs:
     echo:
        runs-on: ubuntu-latest 
        steps:
-         - name: show the trigger 
+         - name: show the trigger  
+          ## this are github contexts
            run: echo "I've been triggered by a(n) ${{ github.event_name }} event."
