@@ -1,9 +1,11 @@
 name: 06 -contexts
-on: push 
+on: 
+    push:
+    workflow_dispatch: 
 
 jobs:
     echo-data:
-        runs-on: ubuntu=latest 
+        runs-on: ubuntu-latest 
         steps:
             - name: Display Infromation
               run: |
